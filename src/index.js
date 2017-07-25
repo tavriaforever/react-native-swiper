@@ -207,6 +207,7 @@ export default class extends Component {
     initState.dir = props.horizontal === false ? 'y' : 'x'
     initState.width = props.width || width
     initState.height = props.height || height
+
     newInternals.offset = {}
 
     if (initState.total > 1) {
@@ -628,7 +629,7 @@ export default class extends Component {
       <View style={[styles.container, {
         width: state.width,
         height: state.height
-      }]}>
+      }, props.rootStyle]}>
         {this.renderScrollView(pages)}
         {props.showsPagination && (props.renderPagination
           ? this.props.renderPagination(state.index, state.total, this)
